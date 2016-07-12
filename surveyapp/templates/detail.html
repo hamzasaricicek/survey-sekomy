@@ -1,0 +1,24 @@
+{% extends 'master.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question Details</title>
+</head>
+<body>
+</br>
+{{ question.question_text }}
+{{ question.pub_date }}
+{% if question.choice_set %}
+        {% for choice in question.choice_set.all %}
+
+            <p>{{ choice.choice_text }}</p>
+        {% endfor %}
+
+{% else %}
+    <p>no choices</p>
+{% endif %}
+</body>
+</html>
+{% endblock %}
